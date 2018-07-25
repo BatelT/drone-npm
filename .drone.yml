@@ -2,7 +2,6 @@ pipeline:
   build:
     image: node:latest
     secrets: [ ARTIFACTORY_PASSWORD, ARTIFACTORY_USER, ARTIFACTORY_URL, NPM_REPO_KEY ]
-    # Download the JFrog CLI 
       - curl -fL https://getcli.jfrog.io | sh
       - ./jfrog rt config --url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD
       - ./jfrog rt c show
